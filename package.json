@@ -25,13 +25,17 @@
     "@langchain/community": "^0.3.42",
     "@langchain/core": "^0.3.51",
     "@langchain/openai": "^0.5.10",
+    "@langchain/textsplitters": "^0.1.0",
     "dotenv": "^16.4.5",
     "langchain": "^0.3.24",
-    "pdf-parse": "^1.1.1"
+    "pdf-parse": "^1.1.1",
+    "pg": "^8.15.6",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.24",
+    "@types/pg": "^8.11.14",
     "@typescript-eslint/eslint-plugin": "^7.1.0",
     "@typescript-eslint/parser": "^7.1.0",
     "eslint": "^8.57.0",
