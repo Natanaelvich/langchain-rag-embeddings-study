@@ -1,4 +1,3 @@
-import { JSONLoader } from "langchain/document_loaders/fs/json";
 import path from "path";
 import fs from "fs";
 import { Document } from "@langchain/core/documents";
@@ -18,28 +17,43 @@ async function loadJSONsFromDirectory() {
     file.toLowerCase().endsWith(".json")
   );
 
-  // JSONLoader é uma utilidade do LangChain que:
-  // 1. Carrega arquivos JSON e os converte em objetos Document
-  // 2. Preserva a estrutura dos dados JSON
-  // 3. Disponibiliza o conteúdo para processamento de texto e embedding
-  const loaders = jsonFiles.map((file) => {
-    const filePath = path.join(jsonDirectory, file);
-    return new JSONLoader(filePath);
-  });
 
-  return loaders;
+  // Lê cada arquivo JSON e retorna seu conteúdo
+  return jsonFiles.map((file) => {
+    const filePath = path.join(jsonDirectory, file);
+    const content = fs.readFileSync(filePath, 'utf-8');
+    return {
+      content: JSON.parse(content),
+      filePath
+    };
+  });
 }
 
 async function loadDocs() {
-  const loaders = await loadJSONsFromDirectory();
+  const jsonFiles = await loadJSONsFromDirectory();
   const docs: Document[] = [];
 
-  await Promise.all(
-    loaders.map(async (loader) => {
-      const docsLoaded = await loader.load();
-      docs.push(docsLoaded[0]);
-    })
-  );
+  // Processa cada arquivo JSON
+  jsonFiles.forEach(({ content, filePath }) => {
+    // Processa cada FAQ individualmente
+    content.faqs.forEach((faq: any) => {
+      // Cria um documento para cada FAQ com seus metadados
+      const doc = new Document({
+        pageContent: `Pergunta: ${faq.question}\nResposta: ${faq.answer}`,
+        metadata: {
+          id: faq.id,
+          category: content.category,
+          tags: faq.tags,
+          last_updated: faq.last_updated,
+          // Campos específicos por categoria
+          ...(faq.related_products && { related_products: faq.related_products }),
+          ...(faq.service_type && { service_type: faq.service_type }),
+          ...(faq.difficulty && { difficulty: faq.difficulty })
+        }
+      });
+      docs.push(doc);
+    });
+  });
 
   return docs;
 }
