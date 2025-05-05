@@ -1,4 +1,4 @@
-## 📅 **Cronograma de Estudos Prático (6 Semanas)**
+## 📅 **Cronograma de Estudos Prático (8 Semanas)**
 
 ### 🔹 **Semana 1 – Fundamentos de Embeddings**
 
@@ -24,8 +24,6 @@
 - **Desafio:**
     - Criar uma mini ferramenta onde você digita algo e ela retorna o contexto mais próximo.
 
----
-
 ### 🔹 **Semana 3 – Introdução ao RAG**
 
 **Objetivo:** Combinar embeddings + LLM para respostas inteligentes com base em documentos.
@@ -38,8 +36,6 @@
 - **Desafio:**
     - Sistema que responde perguntas sobre uma base jurídica ou técnica (ex: normas ABNT ou documentação de API).
 
----
-
 ### 🔹 **Semana 4 – RAG aplicado ao mundo real**
 
 **Objetivo:** Resolver problemas com base em documentos externos e não treinados.
@@ -49,9 +45,28 @@
 - **Desafio:**
     - Use dados de clientes reais (com permissão), contratos, ou documentação interna.
 
----
+### 🔹 **Semana 5 – Introdução ao MCP**
 
-### 🔹 **Semana 5 – Introdução a AI Agents**
+**Objetivo:** Compreender e implementar o Model Context Protocol para melhorar a interação com IA.
+
+- **Estudo Guiado:**
+    - O que é MCP? (Protocolo para padronização de contexto)
+    - Ferramentas: MCP Server, MCP Client, Schema
+- **Prática:**
+    - Implemente um servidor MCP básico e conecte com uma IDE.
+- **Desafio:**
+    - Crie uma extensão que fornece contexto em tempo real para um modelo de IA.
+
+### 🔹 **Semana 6 – MCP aplicado ao mundo real**
+
+**Objetivo:** Aplicar MCP em cenários reais de desenvolvimento e produtividade.
+
+- **Case Real:**
+    - Desenvolva uma integração MCP para uma ferramenta de desenvolvimento.
+- **Desafio:**
+    - Implemente um sistema que melhora a produtividade usando contexto em tempo real.
+
+### 🔹 **Semana 7 – Introdução a AI Agents**
 
 **Objetivo:** Criar agentes que interajam com ferramentas e dados para resolver tarefas complexas.
 
@@ -61,11 +76,9 @@
 - **Prática:**
     - Monte um agente que faz perguntas, busca no Google (ou simula), lê PDFs e responde.
 - **Desafio:**
-    - Agente que lê uma tarefa (ex: “faça um resumo deste relatório e envie por e-mail”) e executa.
+    - Agente que lê uma tarefa (ex: "faça um resumo deste relatório e envie por e-mail") e executa.
 
----
-
-### 🔹 **Semana 6 – Projeto Final: Aplicação Real**
+### 🔹 **Semana 8 – Projeto Final: Aplicação Real**
 
 **Objetivo:** Consolidar tudo em uma aplicação que resolva um problema real.
 
@@ -85,3 +98,5 @@
 - **Streamlit ou Gradio para interfaces rápidas**
 - **GitHub + Git para versionamento**
 - **Notion ou Obsidian para organizar seus estudos**
+- **MCP Server e Client para contexto em tempo real**
+- **LangGraph / AutoGen / CrewAI para AI Agents**
