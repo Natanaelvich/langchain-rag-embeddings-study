@@ -5,13 +5,10 @@ import {
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { PoolConfig } from "pg";
 
-
-// Main function to run the PDF loading
-async function main() {
+export const createVectorStore = async () => {
   const embeddings = new OpenAIEmbeddings({
     model: "text-embedding-3-small",
   });
-
   // Sample config
   const config = {
     postgresConnectionOptions: {
@@ -35,11 +32,15 @@ async function main() {
 
   const vectorStore = await PGVectorStore.initialize(embeddings, config);
 
-  const results = await vectorStore.similaritySearch("Quais as Lula aposta em pautas populares?", 5);
-  console.log(results);
+  return vectorStore;
+};
+
+export const searchEmbeddings = async (query: string) => {
+  const vectorStore = await createVectorStore();
+
+  const results = await vectorStore.similaritySearch(query, 5);
 
   await vectorStore.end();
-}
 
-// Execute the main function
-main().catch(console.error);
+  return results;
+};
