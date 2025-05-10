@@ -45,7 +45,34 @@
 - **Desafio:**
     - Use dados de clientes reais (com permissão), contratos, ou documentação interna.
 
-### 🔹 **Semana 5 – Introdução ao MCP**
+### 🔹 **Semana 5 – Introdução ao Fine-tuning**
+
+**Objetivo:** Compreender e implementar técnicas de fine-tuning para modelos de linguagem.
+
+- **Estudo Guiado:**
+    - O que é Fine-tuning? (Adaptação de modelos para domínios específicos)
+    - Ferramentas: Hugging Face Transformers, PEFT, LoRA
+    - Técnicas: Full Fine-tuning vs Parameter-Efficient Fine-tuning
+- **Prática:**
+    - Prepare um dataset para fine-tuning
+    - Implemente fine-tuning em um modelo base (ex: BERT, GPT-2)
+- **Desafio:**
+    - Crie um modelo especializado em um domínio específico (ex: jurídico, médico, técnico)
+
+### 🔹 **Semana 6 – Fine-tuning Aplicado**
+
+**Objetivo:** Aplicar fine-tuning em cenários reais e otimizar modelos.
+
+- **Case Real:**
+    - Fine-tune um modelo para entender melhor sua base de conhecimento específica
+    - Compare resultados entre RAG e Fine-tuning
+- **Prática:**
+    - Implemente técnicas de otimização (LoRA, QLoRA)
+    - Avalie e compare diferentes abordagens
+- **Desafio:**
+    - Crie um pipeline completo de fine-tuning com avaliação de qualidade
+
+### 🔹 **Semana 7 – Introdução ao MCP**
 
 **Objetivo:** Compreender e implementar o Model Context Protocol para melhorar a interação com IA.
 
@@ -57,7 +84,7 @@
 - **Desafio:**
     - Crie uma extensão que fornece contexto em tempo real para um modelo de IA.
 
-### 🔹 **Semana 6 – MCP aplicado ao mundo real**
+### 🔹 **Semana 8 – MCP aplicado ao mundo real**
 
 **Objetivo:** Aplicar MCP em cenários reais de desenvolvimento e produtividade.
 
@@ -66,7 +93,7 @@
 - **Desafio:**
     - Implemente um sistema que melhora a produtividade usando contexto em tempo real.
 
-### 🔹 **Semana 7 – Introdução a AI Agents**
+### 🔹 **Semana 9 – Introdução a AI Agents**
 
 **Objetivo:** Criar agentes que interajam com ferramentas e dados para resolver tarefas complexas.
 
@@ -78,7 +105,7 @@
 - **Desafio:**
     - Agente que lê uma tarefa (ex: "faça um resumo deste relatório e envie por e-mail") e executa.
 
-### 🔹 **Semana 8 – Projeto Final: Aplicação Real**
+### 🔹 **Semana 10 – Projeto Final: Aplicação Real**
 
 **Objetivo:** Consolidar tudo em uma aplicação que resolva um problema real.
 
@@ -100,3 +127,4 @@
 - **Notion ou Obsidian para organizar seus estudos**
 - **MCP Server e Client para contexto em tempo real**
 - **LangGraph / AutoGen / CrewAI para AI Agents**
+- **Hugging Face Transformers e PEFT para Fine-tuning**
